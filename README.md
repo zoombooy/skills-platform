@@ -1,6 +1,8 @@
 # Skills 管理监控平台
 
 一个现代化的 Web 应用，用于管理和监控 Claude Code Skills。
+<img width="1920" height="1161" alt="image" src="https://github.com/user-attachments/assets/3d9914c4-0121-43c4-bb05-f848985235e4" />
+
 
 ## 功能特性
 
