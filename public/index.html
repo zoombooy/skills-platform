@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills 管理监控平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛠️ Skills 管理监控平台</h1>
+      <div class="connection-status">
+        <span id="ws-status" class="status-dot"></span>
+        <span id="ws-text">连接中...</span>
+      </div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="total-skills">0</div>
+        <div class="stat-label">总 Skills</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="active-skills">0</div>
+        <div class="stat-label">活跃 Skills</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="total-usage">0</div>
+        <div class="stat-label">总使用次数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="recent-logs">0</div>
+        <div class="stat-label">最近日志</div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <section class="skills-section">
+        <div class="section-header">
+          <h2>Skills 列表</h2>
+          <button class="btn btn-primary" onclick="showAddSkillModal()">+ 添加 Skill</button>
+        </div>
+        <div id="skills-list" class="skills-list"></div>
+      </section>
+
+      <section class="logs-section">
+        <div class="section-header">
+          <h2>实时日志</h2>
+          <button class="btn btn-secondary" onclick="clearLogs()">清空</button>
+        </div>
+        <div id="logs-list" class="logs-list"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- 添加 Skill 模态框 -->
+  <div id="add-skill-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAddSkillModal()">&times;</span>
+      <h2>添加新 Skill</h2>
+      <form id="add-skill-form">
+        <div class="form-group">
+          <label>名称</label>
+          <input type="text" id="skill-name" required>
+        </div>
+        <div class="form-group">
+          <label>URL</label>
+          <input type="text" id="skill-url" required>
+        </div>
+        <div class="form-group">
+          <label>版本</label>
+          <input type="text" id="skill-version" value="1.0.0">
+        </div>
+        <div class="form-group">
+          <label>描述</label>
+          <textarea id="skill-description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">添加</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
